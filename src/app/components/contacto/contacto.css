@@ -1,67 +1,311 @@
+/* ===========================
+   contacto.css — Componente Contacto
+   WebDesign Services
+   =========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap');
+
+/* ===========================
+   VARIABLES
+   =========================== */
+:host {
+  --primary:       #2563eb;
+  --primary-dim:   #1e40af;
+  --primary-light: #eff6ff;
+  --accent:        #8e3a8a;
+  --background:    #f5f7f9;
+  --surface:       #ffffff;
+  --on-surface:    #1a1d1f;
+  --muted:         #6b7280;
+  --error:         #b91c1c;
+  --error-light:   #fef2f2;
+  --success:       #15803d;
+  --success-light: #f0fdf4;
+  --border:        rgba(0, 0, 0, 0.07);
+  --shadow-md:     0 8px 32px rgba(0, 0, 0, 0.08);
+  --shadow-lg:     0 20px 60px rgba(0, 0, 0, 0.10);
+}
+
+/* ===========================
+   WRAPPER PRINCIPAL
+   =========================== */
+
+/* Sobreescribe el div con style inline */
+div[style*="max-width: 800px"],
+div[style*="max-width:800px"] {
+  max-width: 860px !important;
+  margin: 0 auto !important;
+  padding: 7rem 1.5rem 4rem !important;
+  min-height: 100vh !important;
+  background: var(--background) !important;
+  position: relative !important;
+}
+
+/* Blob decorativo azul */
+div[style*="max-width: 800px"]::before,
+div[style*="max-width:800px"]::before {
+  content: '';
+  position: fixed;
+  top: -10%; left: -5%;
+  width: 40vw; height: 40vw;
+  border-radius: 9999px;
+  background: #2563eb;
+  filter: blur(80px);
+  opacity: 0.08;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Blob decorativo púrpura */
+div[style*="max-width: 800px"]::after,
+div[style*="max-width:800px"]::after {
+  content: '';
+  position: fixed;
+  bottom: -10%; right: -5%;
+  width: 35vw; height: 35vw;
+  border-radius: 9999px;
+  background: #8e3a8a;
+  filter: blur(80px);
+  opacity: 0.08;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ===========================
+   TÍTULO PRINCIPAL
+   =========================== */
+h1 {
+  font-family: 'Manrope', sans-serif !important;
+  font-size: clamp(2.2rem, 5vw, 3.25rem) !important;
+  font-weight: 900 !important;
+  letter-spacing: -0.04em !important;
+  color: var(--on-surface) !important;
+  text-align: center !important;
+  margin-bottom: 0.75rem !important;
+  line-height: 1.1 !important;
+}
+
+/* Subtítulo decorativo debajo del h1 */
+h1::after {
+  content: 'Cuéntanos tu proyecto y te ayudamos a hacerlo realidad';
+  display: block;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--muted);
+  letter-spacing: 0;
+  margin-top: 0.75rem;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+/* ===========================
+   CARD PRINCIPAL
+   =========================== */
+div[style*="background: white"],
+div[style*="background:white"] {
+  background: var(--surface) !important;
+  padding: 3rem !important;
+  border-radius: 2rem !important;
+  box-shadow: var(--shadow-lg) !important;
+  border: 1px solid var(--border) !important;
+  position: relative;
+  z-index: 1;
+}
+
+/* ===========================
+   ALERTAS
+   =========================== */
+.alert-success {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 1rem 1.25rem;
+  background: var(--success-light);
+  color: var(--success);
+  border: 1px solid #bbf7d0;
+  border-radius: 0.875rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 1.75rem;
+}
+
+.alert-error {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 1rem 1.25rem;
+  background: var(--error-light);
+  color: var(--error);
+  border: 1px solid #fecaca;
+  border-radius: 0.875rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 1.75rem;
+}
+
+/* ===========================
+   FORMULARIO
+   =========================== */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
 .form-group {
-  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
 }
 
 .form-group label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: 500;
-  color: #1f2937;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-left: 0.25rem;
 }
 
 .form-group input,
 .form-group textarea {
   width: 100%;
-  padding: 12px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  font-size: 14px;
-  transition: border-color 0.3s;
+  background: #f8fafc;
+  border: 2px solid transparent;
+  border-radius: 0.875rem;
+  padding: 0.9rem 1.1rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  color: var(--on-surface);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #cbd5e1;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
-  outline: none;
-  border-color: #2563eb;
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+  background: var(--surface);
+  border-color: rgba(37, 99, 235, 0.35);
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.08);
 }
 
+/* Input inválido y tocado */
+.form-group input.ng-invalid.ng-touched,
+.form-group textarea.ng-invalid.ng-touched {
+  border-color: rgba(185, 28, 28, 0.40);
+  box-shadow: 0 0 0 4px rgba(185, 28, 28, 0.06);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 130px;
+  line-height: 1.6;
+}
+
+/* Mensaje de error de campo */
 .error-message {
-  color: #dc2626;
-  font-size: 12px;
-  margin-top: 5px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--error);
+  margin-left: 0.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
 }
 
-.alert-success {
-  background: #10b981;
-  color: white;
-  padding: 15px;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  text-align: center;
+.error-message::before {
+  content: '⚠';
+  font-size: 0.7rem;
 }
 
-.alert-error {
-  background: #dc2626;
-  color: white;
-  padding: 15px;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  text-align: center;
+/* ===========================
+   BOTÓN SUBMIT
+   =========================== */
+.btn-primary {
+  width: 100%;
+  background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+  color: #ffffff;
+  font-family: 'Manrope', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 1rem 1.5rem;
+  border-radius: 0.875rem;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.15s, box-shadow 0.2s;
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.30);
+  letter-spacing: -0.01em;
+  margin-top: 0.5rem;
 }
 
+.btn-primary:hover:not(:disabled) {
+  opacity: 0.92;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 28px rgba(37, 99, 235, 0.35);
+}
+
+.btn-primary:active:not(:disabled) { transform: scale(0.98); }
+
+.btn-primary:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* ===========================
+   CONTACT INFO
+   =========================== */
 .contact-info {
-  margin-top: 40px;
-  padding-top: 30px;
-  border-top: 1px solid #e5e7eb;
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
 }
 
 .contact-info h3 {
-  margin-bottom: 15px;
-  color: #1f2937;
+  font-family: 'Manrope', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--on-surface);
+  margin-bottom: 1rem;
+  letter-spacing: -0.01em;
 }
 
 .contact-info p {
-  margin: 10px 0;
-  color: #6b7280;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.7;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0;
+  border-radius: 0.5rem;
+  transition: color 0.2s;
+}
+
+.contact-info p:hover { color: var(--on-surface); }
+
+/* ===========================
+   RESPONSIVE
+   =========================== */
+@media (max-width: 640px) {
+  div[style*="background: white"],
+  div[style*="background:white"] {
+    padding: 2rem 1.25rem !important;
+    border-radius: 1.25rem !important;
+  }
+
+  h1 { font-size: 2rem !important; }
 }
