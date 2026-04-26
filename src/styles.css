@@ -1,1 +1,178 @@
-/* You can add global styles to this file, and also import other style files */
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background: #f4f6f9;
+  color: #1f2937;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.logo {
+  font-weight: 700;
+  color: #2563eb;
+  font-size: 18px;
+}
+
+.logo span {
+  display: block;
+  color: #111827;
+  font-size: 14px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+nav a {
+  margin: 0 18px;
+  text-decoration: none;
+  color: #6b7280;
+  font-weight: 500;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+nav a:hover {
+  color: #2563eb;
+}
+
+nav a.active {
+  color: #2563eb;
+  font-weight: 600;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(37,99,235,0.3);
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 80px 20px 40px;
+  max-width: 800px;
+  margin: auto;
+}
+
+.hero h1 {
+  font-size: 42px;
+  line-height: 1.2;
+  margin-bottom: 25px;
+  font-weight: 700;
+}
+
+.hero p {
+  color: #6b7280;
+  margin-bottom: 25px;
+  font-size: 16px;
+}
+
+.hero ul {
+  list-style: none;
+  margin-top: 10px;
+}
+
+.hero li {
+  margin: 6px 0;
+  color: #374151;
+}
+
+/* IMAGE */
+.image-section {
+  margin-top: 40px;
+}
+
+.image-section img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+/* FOOTER */
+footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 60px;
+  background: white;
+  font-size: 14px;
+  color: #6b7280;
+  border-top: 1px solid #e5e7eb;
+}
+
+footer .links a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #6b7280;
+  cursor: pointer;
+}
+
+footer .links a:hover {
+  color: #2563eb;
+}
+
+/* 📱 RESPONSIVE */
+@media (max-width: 900px) {
+  .navbar {
+    padding: 20px;
+  }
+  nav a {
+    margin: 0 10px;
+  }
+  .hero h1 {
+    font-size: 34px;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    gap: 15px;
+  }
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .btn-primary {
+    width: 100%;
+  }
+  .hero {
+    padding: 60px 15px;
+  }
+  .hero h1 {
+    font-size: 28px;
+  }
+  .image-section img {
+    height: 250px;
+  }
+  footer {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+}

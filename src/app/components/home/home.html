@@ -1,0 +1,83 @@
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="logo">WebDesign <span>Services</span></div>
+  
+  <nav>
+    <a routerLink="/" routerLinkActive="active">Inicio</a>
+    <a routerLink="/servicios" routerLinkActive="active">Servicios</a>
+    <a routerLink="/favoritos" routerLinkActive="active">Favoritos</a>
+    <a routerLink="/contacto" routerLinkActive="active">Contacto</a>
+  </nav>
+  
+  <button class="btn-primary" routerLink="/admin">Crear servicio</button>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>Desarrollamos tu<br>requerimiento de<br>la mejor manera</h1>
+  <p>Atención profesional, desarrollo y capacitación <br>Servicios Digitales</p>
+  <ul>
+    <li>Diseño web</li>
+    <li>Optimización SEO</li>
+    <li>Landing Page Profesional</li>
+    <li>Tienda Online</li>
+    <li>Desarrollo Web</li>
+  </ul>
+</section>
+
+<!-- SERVICIOS DESTACADOS -->
+<section class="servicios-destacados" style="padding: 40px 60px; background: #f9fafb;">
+  <h2 style="text-align: center; margin-bottom: 30px;">🌟 Servicios Destacados</h2>
+  
+  <!-- Spinner -->
+  <div *ngIf="loading" style="text-align: center; padding: 40px;">
+    <div style="border: 4px solid #f3f3f3; border-top: 4px solid #2563eb; border-radius: 50%; width: 50px; height: 50px; animation: spin 1s linear infinite; margin: 0 auto;"></div>
+    <p style="margin-top: 15px; color: #6b7280;">Cargando servicios destacados...</p>
+  </div>
+
+  <!-- Tarjetas -->
+  <div *ngIf="!loading" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px;">
+    <div *ngFor="let servicio of serviciosDestacados" 
+         style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.08); transition: transform 0.3s;">
+      <img [src]="servicio.imagen" [alt]="servicio.nombre" 
+           style="width:100%; height:220px; object-fit:cover;" 
+           (error)="servicio.imagen='assets/hero.jpg'">
+      <div style="padding: 25px;">
+        <h3 style="font-size: 20px; margin-bottom: 10px;">{{ servicio.nombre }}</h3>
+        <p style="color: #6b7280; margin-bottom: 20px;">{{ servicio.descripcionBreve }}</p>
+        <p style="font-size: 24px; color: #2563eb; font-weight: 700; margin-bottom: 20px;">${{ servicio.precio }}</p>
+        <button class="btn-primary" [routerLink]="['/detalle', servicio.id]" 
+                style="width: 100%; padding: 12px; background: linear-gradient(135deg, #2563eb, #1e40af); color: white; border: none; border-radius: 12px; cursor: pointer; font-weight: 600;">
+          Ver más
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMAGEN -->
+<section class="image-section">
+  <img src="assets/hero.jpg" alt="Trabajo en laptop">
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>Digital Atrium</div>
+  <div class="links">
+    <a routerLink="#">Privacidad</a>
+    <a routerLink="#">Términos</a>
+    <a routerLink="#">Ayuda</a>
+  </div>
+</footer>
+
+<style>
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  .servicios-destacados > div > div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+  }
+</style>

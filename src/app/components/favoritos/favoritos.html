@@ -1,0 +1,27 @@
+<div style="padding: 40px 60px; min-height: 60vh;">
+  <h1 style="text-align: center; margin-bottom: 30px;">❤️ Mis Servicios Favoritos</h1>
+
+  <div *ngIf="favoritos.length === 0" class="empty-favoritos">
+    <div class="empty-icon">💔</div>
+    <h3>No tienes servicios favoritos aún</h3>
+    <p>Explora nuestros servicios y agrega tus favoritos</p>
+    <button class="btn-primary" routerLink="/servicios">Ver servicios</button>
+  </div>
+
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px;" *ngIf="favoritos.length > 0">
+    <div *ngFor="let servicio of favoritos" class="card-favorito">
+      <img [src]="servicio.imagen" [alt]="servicio.nombre" class="card-img" (error)="servicio.imagen='assets/hero.jpg'">
+      <div style="padding: 20px;">
+        <h3>{{ servicio.nombre }}</h3>
+        <p style="color: #6b7280; margin: 15px 0;">{{ servicio.descripcionBreve }}</p>
+        <p style="font-size: 24px; color: #2563eb;"><strong>${{ servicio.precio }}</strong></p>
+        <div style="display: flex; gap: 10px; margin-top: 20px;">
+          <button class="btn-primary" [routerLink]="['/detalle', servicio.id]">Ver más</button>
+          <button (click)="eliminarFavorito(servicio.id)" class="btn-eliminar">
+            🗑️ Eliminar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

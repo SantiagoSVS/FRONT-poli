@@ -1,0 +1,49 @@
+{
+  "servicios": [
+    {
+      "id": 1,
+      "nombre": "Diseño Web Profesional",
+      "descripcionBreve": "Diseño moderno y responsive",
+      "descripcionCompleta": "Creamos sitios web atractivos, rápidos y adaptados a todos los dispositivos.",
+      "imagen": "assets/hero.jpg",
+      "categoria": "web",
+      "precio": 299
+    },
+    {
+      "id": 2,
+      "nombre": "Optimización SEO",
+      "descripcionBreve": "Posiciona tu sitio en Google",
+      "descripcionCompleta": "Estrategias SEO para aparecer en los primeros resultados de búsqueda.",
+      "imagen": "assets/hero.jpg",
+      "categoria": "marketing",
+      "precio": 199
+    },
+    {
+      "id": 3,
+      "nombre": "Landing Page Profesional",
+      "descripcionBreve": "Página de ventas efectiva",
+      "descripcionCompleta": "Diseñamos landing pages optimizadas para conversión.",
+      "imagen": "assets/hero.jpg",
+      "categoria": "web",
+      "precio": 149
+    },
+    {
+      "id": 4,
+      "nombre": "Tienda Online",
+      "descripcionBreve": "E-commerce completo",
+      "descripcionCompleta": "Tiendas virtuales con carrito de compras y pasarela de pago.",
+      "imagen": "assets/hero.jpg",
+      "categoria": "ecommerce",
+      "precio": 499
+    },
+    {
+      "id": 5,
+      "nombre": "Marketing Digital Avanzado",
+      "descripcionBreve": "Campañas publicitarias efectivas",
+      "descripcionCompleta": "Gestión de anuncios en Google y redes sociales para maximizar tu alcance.",
+      "imagen": "assets/hero.jpg",
+      "categoria": "marketing",
+      "precio": 349
+    }
+  ]
+}

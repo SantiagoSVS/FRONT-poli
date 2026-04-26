@@ -1,0 +1,56 @@
+<div style="max-width: 1200px; margin: 40px auto; padding: 0 20px;">
+  <h1 style="text-align: center; margin-bottom: 40px;">⚙️ Administrar Servicios</h1>
+  
+  <!-- Formulario para crear -->
+  <div class="admin-form">
+    <h2>➕ Crear Nuevo Servicio</h2>
+    
+    <div class="form-grid">
+      <div>
+        <label>Nombre *</label>
+        <input type="text" [(ngModel)]="nuevoServicio.nombre" placeholder="Ej: Diseño Web">
+      </div>
+      
+      <div>
+        <label>Categoría</label>
+        <select [(ngModel)]="nuevoServicio.categoria">
+          <option value="web">🌐 Web</option>
+          <option value="marketing">📢 Marketing</option>
+          <option value="ecommerce">🛒 Ecommerce</option>
+        </select>
+      </div>
+      
+      <div>
+        <label>Descripción breve *</label>
+        <input type="text" [(ngModel)]="nuevoServicio.descripcionBreve" placeholder="Descripción corta">
+      </div>
+      
+      <div>
+        <label>Precio *</label>
+        <input type="number" [(ngModel)]="nuevoServicio.precio" placeholder="Ej: 299">
+      </div>
+      
+      <div class="full-width">
+        <label>Descripción completa</label>
+        <textarea [(ngModel)]="nuevoServicio.descripcionCompleta" rows="3" placeholder="Descripción detallada del servicio"></textarea>
+      </div>
+    </div>
+    
+    <button (click)="crearServicio()" class="btn-primary">Crear Servicio</button>
+  </div>
+  
+  <!-- Listado de servicios -->
+  <div class="admin-list">
+    <h3>📋 Servicios Existentes ({{ servicios.length }})</h3>
+    <div *ngFor="let servicio of servicios" class="servicio-item">
+      <div class="servicio-info">
+        <strong>{{ servicio.nombre }}</strong>
+        <span class="categoria-tag">{{ servicio.categoria }}</span>
+        <span class="precio-tag">${{ servicio.precio }}</span>
+      </div>
+      <button (click)="eliminarServicio(servicio.id)" class="btn-eliminar-admin">
+        🗑️ Eliminar
+      </button>
+    </div>
+  </div>
+</div>
